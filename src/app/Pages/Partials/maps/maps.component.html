@@ -1,0 +1,12 @@
+<div class="maps-main-container" id="find-us">
+    <div class="map">
+        <google-map height="400px" width="800px" lang="lng" lat="lat" [center]="center" [zoom]="zoom"
+            (mapClick)="moveMap($event)" (mapMousemove)="move($event)"></google-map>
+    </div>
+    <div class="countries">
+        <div class="country" *ngFor="let country of countries" (click)="onCountryClick(country)"
+            [ngClass]="{'selected': selectedCountryId === country.id}">
+            {{ country.name | translate }}
+        </div>
+    </div>
+</div>
